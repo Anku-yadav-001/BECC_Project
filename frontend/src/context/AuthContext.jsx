@@ -11,7 +11,7 @@ export function AuthContextProvider({children}){
     
     async function handleLogin({email, password}){
         try {
-            const response = await axios.post('http://localhost:8080/api/auth/login', {
+            const response = await axios.post('https://becc-project-1.onrender.com/api/auth/login', {
               email,
               password,
             });
@@ -88,7 +88,7 @@ export function AuthContextProvider({children}){
           return;
         }
   
-        const response = await axios.post('http://localhost:8080/api/auth/logout', {}, {
+        const response = await axios.post('https://becc-project-1.onrender.com/api/auth/logout', {}, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

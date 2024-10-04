@@ -43,7 +43,7 @@ export function Users() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/auth/all-users', {
+        const response = await axios.get('https://becc-project-1.onrender.com/api/auth/all-users', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
           },

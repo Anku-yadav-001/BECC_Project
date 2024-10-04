@@ -98,7 +98,7 @@ export function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
-        `http://localhost:8080/api/products?page=${currentPage}&title=${searchTerm}&category=${categoryFilter}&price=${priceFilter}&brand=${brandFilter}`,
+        `https://becc-project-1.onrender.com/api/products?page=${currentPage}&title=${searchTerm}&category=${categoryFilter}&price=${priceFilter}&brand=${brandFilter}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -139,7 +139,7 @@ export function Products() {
       return;
     }
 
-    const response = await fetch(`http://localhost:8080/api/products/${editProductData._id}`, {
+    const response = await fetch(`https://becc-project-1.onrender.com/api/products/${editProductData._id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -172,7 +172,7 @@ export function Products() {
   };
 
   const handleDeleteProduct = async (id) => {
-    const response = await fetch(`http://localhost:8080/api/products/${id}`, {
+    const response = await fetch(`https://becc-project-1.onrender.com/api/products/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -215,7 +215,7 @@ export function Products() {
             value={categoryFilter}
             onChange={(e) => {
               setCategoryFilter(e.target.value);
-              setCurrentPage(1); // reset page on filter change
+              setCurrentPage(1);
             }}
           >
             {availableCategories.map((category) => (

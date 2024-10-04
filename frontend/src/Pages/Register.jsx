@@ -33,7 +33,7 @@ export function Register() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/signup', formData);
+      const response = await axios.post('https://becc-project-1.onrender.com/api/auth/signup', formData);
       switch (response.data.status) {
         case 201:
           toast({

@@ -37,7 +37,7 @@ const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/products', productData, {
+      const response = await axios.post('https://becc-project-1.onrender.com/api/products', productData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
         },
