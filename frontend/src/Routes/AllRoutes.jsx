@@ -12,6 +12,7 @@ import AddProduct from "../Pages/AddProduct.jsx"
 
 export function AllRoutes() {
     const role = localStorage.getItem("role")
+    console.log(role)
     return <>
         <Routes>
             <Route path="/" element={<Home />} />
@@ -24,7 +25,7 @@ export function AllRoutes() {
             } />
             <Route path="/users" element={
                 <PrivateRoute>
-                    {role == "admin" ? <Users /> : <AdminAccess />}
+                    {role === "admin" ? <Users /> : <AdminAccess />}
                 </PrivateRoute>
             } />
             <Route path="/add-product" element={
