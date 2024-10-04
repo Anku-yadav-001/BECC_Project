@@ -15,6 +15,10 @@ server.use(cors())
 //     allowedHeaders: ["Content-Type", "Authorization"] 
 // }));
 
+server.get("/",(req,res)=>{
+    res.send("server is working fine")
+})
+
 server.get("/api",(req,res)=>{
     res.send("server is working fine")
 })
